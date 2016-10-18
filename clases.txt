@@ -1,0 +1,82 @@
+funciones 
+recursividad
+	factorial
+		version iterativa : 5! = 5x4x3x2x1 = 120
+		version recursiva : 5! = 5x4!	
+POO
+	objetos
+		- cualquier cosa del mundo real
+		- tiene estado, comportamiento e identidad
+		
+		ej :
+			Bombilla b = new Bombilla();
+	clase de objetos
+		- describe como es el objeto
+		ej:bombilla
+			-estado: boolean
+			+enceder()
+			+apagar()
+			
+		public class Bombilla{
+			// Propiedad
+			private boolean estado = false;
+			
+			//constructor
+			Bombilla( boolean estado){
+				this.estado = estado;
+			}
+			
+			//Metodos
+			public void enceder(){
+				estado = true;
+			}
+			public void apagar(){
+				estado = false;
+			}
+		}
+		*sobrecarga
+			se llama sobrecarga cuando llamamos a varios constructores con el mismo nombre de la clase
+			 definir varias versiones de ese metodo en funcion de la lista de parametros que tenga
+	encapsulacion
+		hace que las propiedades o metodos sean o no visibles desde el exterior del objeto
+		tipos visibilidad del objeto
+			privada = private 
+			publica = public
+			protegida = protected (es para acceder desde las sub clases a las propiedades de la clase padre)
+			por defecto o paquete (esto hace que las propiedades o los metodos sean accesibles solo a las clases que esten contenido en el mismo paquete  )
+		lo normal es que las propiedades sean privadas y los metodos publicos
+		
+	Herencia
+		nos permite usar las caracteristicas de la clase padre
+		con la plabra extends decimos que la sub clase es una derivacion de la clase padre y adquirira los metodos y las propiedades que vengan de ella
+		
+	interfaces
+		es una colección de métodos abstractos y propiedades.
+		específica lo que se va hacer pero no su implementación .
+
+	abstractas
+		la diferencia esta en que no se pueden instanciar como las clases normales  
+		se ejemplifica con el nombre cursivo
+
+	Arrays
+		tipo_de_dato[] nombre_del_array;
+		nombre_del_array = new tipo_de_dato[dimension];
+		nombre_del_array[posicion] = valor;
+	
+	Listas
+		colections
+			conjuntos de datos
+			- Interfaz List<E>
+				coleccion de elementos en una secuencia particular que mantienen un orden y permite duplicados
+				implementaciones de list : ArrayList<E>, LinkedList<E>, Vector<E>
+					ArrayList<E>
+						-lo bueno es el acceso a una elemento en particular es eficiente
+						- lo malo que para eliminar un elemento, se ha de mover toda la lista para eliminar el elemento eliminado.
+					LinkedList<E>
+						- lo bueno es que estan conectados los elementos
+						- es eficiente mover/eliminar elementos de la lista, simplemente moviendo / eliminaod sus referencias hacia otros elementos.
+						- la desventaja es que para usar el Elemento N de la lista, debemos recorrer N elementos de la lista hasta encontrarlo
+					Vector<E>
+						- es igual que ArrayList, pero sincronizado( osea esta preparado para trabajar en programas multihilo)
+						- Si se utiliza el mismo vector en dos hilos al mismo tiempo, se puede garantizar que el acceso concurrente se hace de forma ordenada.
+						- esta caracteristica hace que sea mucho mas lento que ArrayList pero sea seguro utilizarlo en programas multihilo 
